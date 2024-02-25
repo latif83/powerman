@@ -45,7 +45,7 @@ export const Slides = () => {
 
   return (
     <>
-      <div className="bg-gray-800 py-12 sm:px-12 px-3 text-white">
+      <div id="sermons" className="bg-gray-800 py-12 sm:px-12 px-3 text-white">
         <h1 className="text-red-500 text-semibold">OUR SERMONS</h1>
         <hr className="w-16 h-1 my-2 bg-red-500 border-0 rounded" />
         <p className="text-bold text-3xl sm:text-4xl sm:w-1/2">

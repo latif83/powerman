@@ -11,7 +11,7 @@ export const MSG2 = () => {
         className={`${styles.bg4} text-white sm:px-12 px-3 py-12`}
       >
         <h1 className="font-semibold text-lg text-red-500">
-          WELCOME TO SALVATION CHURCH
+          WELCOME TO THAGOSPEL CHURCH
         </h1>
         <hr className="w-16 h-1 my-2 bg-red-500 border-0 rounded" />
         <p className="font-semibold mt-5 text-4xl">
@@ -19,14 +19,15 @@ export const MSG2 = () => {
         </p>
 
         <p className="mt-8">
-          A small river named Duden flows by their place and supplies it with
-          the necessary regelialia. It is a paradisematic country, in which
-          roasted parts of sentences fly into your mouth.
+          Join us to connect, grow, and serve. Discover a welcoming community
+          where faith flourishes and friendships thrive. Together, we explore
+          God's love and purpose, making a tangible impact in our world.
         </p>
-        <p>
-          A small river named Duden flows by their place and supplies it with
-          the necessary regelialia. It is a paradisematic country, in which
-          roasted parts of sentences fly into your mouth.
+        <p className="mt-2">
+          In our gatherings, experience engaging worship, insightful teachings,
+          and opportunities to serve others. Let's journey together, living out
+          the love of Christ and making a difference in the lives of those
+          around us.
         </p>
         <button className="bg-red-600 mt-10 rounded hover:bg-red-300 p-3">
           LEARN MORE

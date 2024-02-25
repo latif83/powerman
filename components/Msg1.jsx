@@ -12,11 +12,10 @@ export const MSG1 = ()=>{
           <FontAwesomeIcon icon={faChurch} className="text-4xl" />
         </div>
         <h1 className="text-xl p-0 m-0">WORSHIP</h1>
-        <p className="text-red-500">What to expect</p>
+        <p className="text-red-500">Embrace the Sacred</p>
         <hr className="w-16 h-1 my-2 bg-red-500 border-0 rounded" />
         <p>
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia, there live the blind texts.
+        In the sacred act of worship, we surrender our hearts, lifting our voices in praise and adoration to the Almighty. Through melody and reverence, we commune with the Divine, drawing closer to the source of all life and light.
         </p>
       </div>
       <div className="rounded p-5 shadow border sm:shadow-none sm:border-none">
@@ -24,11 +23,10 @@ export const MSG1 = ()=>{
           <FontAwesomeIcon icon={faHandsPraying} className="text-4xl" />
         </div>
         <h1 className="text-xl p-0 m-0">CONNECT</h1>
-        <p className="text-red-500">Become a member</p>
+        <p className="text-red-500">Join the Community</p>
         <hr className="w-16 h-1 my-2 bg-red-500 border-0 rounded" />
         <p>
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia, there live the blind texts.
+        As believers, we are called to forge bonds of fellowship, connecting with one another in the spirit of love and unity. Through shared faith and mutual support, we find strength, encouragement, and a deeper understanding of God's purpose for our lives.
         </p>
       </div>
       <div className="rounded p-5">
@@ -36,11 +34,10 @@ export const MSG1 = ()=>{
           <FontAwesomeIcon icon={faShieldHeart} className="text-4xl" />
         </div>
         <h1 className="text-xl p-0 m-0">GOD'S LOVE</h1>
-        <p className="text-red-500">Beliefs and History</p>
+        <p className="text-red-500"> Experience Divine Grace</p>
         <hr className="w-16 h-1 my-2 bg-red-500 border-0 rounded" />
         <p>
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia, there live the blind texts.
+        God's love is an everlasting embrace, enfolding us in its boundless warmth and grace. It is a love that knows no bounds, reaching into the depths of our souls and healing every wound. In the embrace of His love, we find solace, redemption, and the promise of eternal joy.
         </p>
       </div>
     </motion.div>

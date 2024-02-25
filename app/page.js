@@ -27,7 +27,7 @@ export default function Home() {
       <MSG1 />
       <MSG2 />
       <Slides />
-      <div className="bg-gradient-to-r from-gray-800 to-red-800 py-12 sm:px-12 px-3 text-white">
+      <div id="events" className="bg-gradient-to-r from-gray-800 to-red-800 py-12 sm:px-12 px-3 text-white">
         <h3 className="text-4xl font-bold">UPCOMING EVENTS</h3>
         <p>No upcoming events, Stay tuned for exciting updates.</p>
       </div>

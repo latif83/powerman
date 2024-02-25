@@ -71,9 +71,9 @@ export const Header = () => {
         <nav className="sm:flex gap-4 font-semibold hidden">
           <Link className="text-red-500 border-b border-red-500" href="/">HOME</Link>
           <Link className="hover:text-red-500" href="/">MINISTRIES</Link>
-          <Link className="hover:text-red-500" href="/">SERMONS</Link>
-          <Link className="hover:text-red-500" href="/">EVENTS</Link>
-          <Link className="hover:text-red-500" href="/">CONTACT</Link>
+          <Link className="hover:text-red-500" href="#sermons">SERMONS</Link>
+          <Link className="hover:text-red-500" href="#events">EVENTS</Link>
+          <Link className="hover:text-red-500" href="#getInTouch">CONTACT</Link>
         </nav>
       </header>
     </div>
