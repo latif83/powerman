@@ -19,7 +19,7 @@ export const Footer = () => {
         </div>
         <div className="flex justify-center">
           <Link
-            href="https://web.facebook.com/emmbeconstruction1"
+            href="https://www.facebook.com/share/9eNWmbabT6xSvrDN/?mibextid=WC7FNe"
             target="_blank"
             rel="noopener noreferrer"
             className="mr-6 text-neutral-200"
@@ -35,7 +35,7 @@ export const Footer = () => {
             <FontAwesomeIcon icon={faYoutube} className="text-xl" />
           </Link>
           <Link
-            href="https://www.youtube.com/channel/UCxTRirLa1FZd9sRjTRuaniA"
+            href="https://wa.me/+233556978861"
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-200"
@@ -131,7 +131,7 @@ export const Footer = () => {
 
       <div className="p-6 text-center bg-black">
         <p className="mb-5">© 2024 Copyright</p>
-        <span>Made with 🥰 By: </span>
+        {/* <span>Made with 🥰 By: </span>
         <Link
           className="font-semibold text-neutral-600 dark:text-neutral-400"
           href="https://latif83.netlify.app"
@@ -139,7 +139,7 @@ export const Footer = () => {
           rel="noopener noreferrer"
         >
           Abdul-Latif
-        </Link>
+        </Link> */}
       </div>
     </footer>
   );

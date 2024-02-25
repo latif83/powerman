@@ -11,7 +11,7 @@ export const MSG2 = () => {
         className={`${styles.bg4} text-white sm:px-12 px-3 py-12`}
       >
         <h1 className="font-semibold text-lg text-red-500">
-          WELCOME TO THAGOSPEL CHURCH
+          WELCOME TO COFIE BEKOE MINISTRIES
         </h1>
         <hr className="w-16 h-1 my-2 bg-red-500 border-0 rounded" />
         <p className="font-semibold mt-5 text-4xl">

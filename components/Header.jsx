@@ -37,7 +37,11 @@ export const Header = () => {
         </span>
         <div className="flex">
           <div className="border-l py-2 px-3 hover:bg-black">
-            <Link href="/">
+            <Link
+              href="https://www.facebook.com/share/9eNWmbabT6xSvrDN/?mibextid=WC7FNe"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon
                 icon={faFacebook}
                 width={20}
@@ -61,7 +65,11 @@ export const Header = () => {
             </Link>
           </div>
           <div className="border-l py-2 px-3 hover:bg-black">
-            <Link href="/">
+            <Link
+              href="https://wa.me/+233556978861"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon
                 icon={faWhatsapp}
                 width={20}
@@ -99,7 +107,11 @@ export const Header = () => {
           </Link>
         </nav>
         <div className="block sm:hidden">
-          <FontAwesomeIcon onClick={()=>setShowNav(true)} icon={faBarsStaggered} className="text-2xl" />
+          <FontAwesomeIcon
+            onClick={() => setShowNav(true)}
+            icon={faBarsStaggered}
+            className="text-2xl"
+          />
           {showNav && (
             <div
               style={{
@@ -112,25 +124,45 @@ export const Header = () => {
               <div className="my-10 mx-3">
                 <div className="flex justify-end w-full">
                   <FontAwesomeIcon
-                  onClick={()=>setShowNav(false)}
+                    onClick={() => setShowNav(false)}
                     icon={faXmark}
                     className="text-4xl text-red-400"
                   />
                 </div>
                 <nav className="flex flex-col">
-                  <Link className="hover:text-red-500 mt-5" href="/" onClick={()=>setShowNav(false)} >
+                  <Link
+                    className="hover:text-red-500 mt-5"
+                    href="/"
+                    onClick={() => setShowNav(false)}
+                  >
                     HOME
                   </Link>
-                  <Link className="hover:text-red-500 mt-5" href="/" onClick={()=>setShowNav(false)} >
+                  <Link
+                    className="hover:text-red-500 mt-5"
+                    href="/"
+                    onClick={() => setShowNav(false)}
+                  >
                     MINISTRIES
                   </Link>
-                  <Link className="hover:text-red-500 mt-5" href="#sermons" onClick={()=>setShowNav(false)} >
+                  <Link
+                    className="hover:text-red-500 mt-5"
+                    href="#sermons"
+                    onClick={() => setShowNav(false)}
+                  >
                     SERMONS
                   </Link>
-                  <Link className="hover:text-red-500 mt-5" href="#events" onClick={()=>setShowNav(false)} >
+                  <Link
+                    className="hover:text-red-500 mt-5"
+                    href="#events"
+                    onClick={() => setShowNav(false)}
+                  >
                     EVENTS
                   </Link>
-                  <Link className="hover:text-red-500 mt-5" href="#getInTouch" onClick={()=>setShowNav(false)} >
+                  <Link
+                    className="hover:text-red-500 mt-5"
+                    href="#getInTouch"
+                    onClick={() => setShowNav(false)}
+                  >
                     CONTACT
                   </Link>
                 </nav>
