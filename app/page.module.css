@@ -1,0 +1,54 @@
+.bg1{
+    /* background-color: red; */
+    height: 100svh;
+    background-image: url('/powerman11.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    top: 0;
+}
+
+.bg1::after{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.158);
+    top: 0;
+}
+
+.bg2{
+    /* background-color: red; */
+    height: 100svh;
+    background-image: url('/powerman33.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-position: center; */
+}
+
+.bg3{
+    background-image: url('/powerman33.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bg4{
+    background-color: rgba(0, 0, 0, 0.678);
+}
+
+.bg2::after{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.158);
+}
+
+@media(max-width:500px){
+    .bg1{
+        background-position: center;
+    }
+    /* .bg1::after{
+        background-color: rgba(0, 0, 0, 0.349);
+    } */
+}
