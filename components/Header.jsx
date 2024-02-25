@@ -14,7 +14,7 @@ import styles from './Header.module.css'
 
 export const Header = () => {
   return (
-    <div style={{ zIndex: 99999 }} className={`absolute top-0 w-full text-white ${styles.container}`}>
+    <div style={{ zIndex: 9999999 }} className={`absolute top-0 w-full text-white ${styles.container}`}>
       <div className="sm:flex hidden justify-between sm:px-12 px-3 border-b">
         <span className="flex gap-2 text-sm items-center">
           <FontAwesomeIcon

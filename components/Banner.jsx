@@ -23,13 +23,13 @@ export const Banner = ()=>{
       >
         <Header />
 
-        <div className="slider-container overflow-hidden h-full text-white">
+        <div style={{ zIndex: 99999 }} className="slider-container relative overflow-hidden h-full text-white">
           <Slider {...settings}>
-            <div className={`${styles.bg1}`}>
-              <motion.div initial={{ opacity: 0, x: -100 }}
+            <div style={{ zIndex: 99999 }} className={`${styles.bg1} relative`}>
+              <motion.div style={{ zIndex: 99999 }} initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }} className="h-full w-full flex flex-col justify-center sm:px-12 px-3">
-                <h1 className="font-semibold text-xl text-red-600 mb-4">
+                transition={{ duration: 1 }} className="h-full relative w-full flex flex-col justify-center sm:px-12 px-3">
+                <h1 className="font-semibold text-xl sm:text-red-600 text-red-400 mb-4">
                   FOLLOWING CHRIST'S PATH -{" "}
                 </h1>
                 <p className="font-bold text-4xl mb-6">A MAN'S DEVOTION</p>

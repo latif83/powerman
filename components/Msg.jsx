@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export const MSG = ()=>{
     return (
         <div className="sm:px-12 px-3 relative grid gap-4 sm:grid-cols-3">
-        <motion.div initial={{ opacity: 0, y: 100 }}
+        <motion.div style={{ zIndex: 999999 }} initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }} className="bg-red-500 shadow-lg text-white rounded-lg relative bottom-5 p-5">
           <h2 className="text-lg font-semibold">
@@ -15,7 +15,7 @@ export const MSG = ()=>{
             divine love that transforms lives and brings glory to God.
           </p>
         </motion.div>
-        <motion.div initial={{ opacity: 0, y: 100 }}
+        <motion.div style={{ zIndex: 999999 }} initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }} className="bg-red-500 shadow-lg text-white rounded-lg relative bottom-5 p-5">
           <h2 className="text-lg font-semibold">
@@ -28,7 +28,7 @@ export const MSG = ()=>{
             humanity.
           </p>
         </motion.div>
-        <motion.div initial={{ opacity: 0, y: 100 }}
+        <motion.div style={{ zIndex: 999999 }} initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }} className="bg-red-500 shadow-lg text-white rounded-lg relative bottom-5 p-5">
           <h2 className="text-lg font-semibold">

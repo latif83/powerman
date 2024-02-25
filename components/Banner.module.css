@@ -48,7 +48,7 @@
     .bg1{
         background-position: center;
     }
-    /* .bg1::after{
-        background-color: rgba(0, 0, 0, 0.349);
-    } */
+    .bg1::after{
+        background-color: rgba(0, 0, 0, 0.185);
+    }
 }
