@@ -27,29 +27,35 @@ export const Header = () => {
           THAGOSPEL CHURCH, Halleluyah Junction, Accra
         </span>
         <div className="flex">
-          <div className="border-l p-2">
+          <div className="border-l py-2 px-3 hover:bg-black">
+            <Link href="/">
             <FontAwesomeIcon
               icon={faFacebook}
               width={20}
               height={20}
               className="text-xl"
             />
+            </Link>
           </div>
-          <div className="border-l p-2">
+          <div className="border-l py-2 px-3 hover:bg-black">
+            <Link href="https://www.youtube.com/@prophetpowermanbekoe1295" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon
               icon={faYoutube}
               width={20}
               height={20}
               className="text-xl"
             />
+            </Link>
           </div>
-          <div className="border-l p-2">
+          <div className="border-l py-2 px-3 hover:bg-black">
+            <Link href="/">
             <FontAwesomeIcon
               icon={faWhatsapp}
               width={20}
               height={20}
               className="text-xl"
             />
+            </Link>
           </div>
         </div>
       </div>
@@ -63,11 +69,11 @@ export const Header = () => {
           className="w-100"
         />
         <nav className="sm:flex gap-4 font-semibold hidden">
-          <Link className="text-red-400 border-b" href="/">HOME</Link>
-          <Link href="/">MINISTRIES</Link>
-          <Link href="/">SERMONS</Link>
-          <Link href="/">EVENTS</Link>
-          <Link href="/">CONTACT</Link>
+          <Link className="text-red-500 border-b border-red-500" href="/">HOME</Link>
+          <Link className="hover:text-red-500" href="/">MINISTRIES</Link>
+          <Link className="hover:text-red-500" href="/">SERMONS</Link>
+          <Link className="hover:text-red-500" href="/">EVENTS</Link>
+          <Link className="hover:text-red-500" href="/">CONTACT</Link>
         </nav>
       </header>
     </div>

@@ -20,18 +20,24 @@ export const Footer = () => {
         <div className="flex justify-center">
           <Link
             href="https://web.facebook.com/emmbeconstruction1"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mr-6 text-neutral-200"
           >
             <FontAwesomeIcon icon={faFacebook} className="text-xl" />
           </Link>
           <Link
-            href="https://www.tiktok.com/@emmbeconstruction1?is_from_webapp=1&sender_device=pc"
+            href="https://www.youtube.com/@prophetpowermanbekoe1295"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mr-6 text-neutral-200"
           >
             <FontAwesomeIcon icon={faYoutube} className="text-xl" />
           </Link>
           <Link
             href="https://www.youtube.com/channel/UCxTRirLa1FZd9sRjTRuaniA"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-neutral-200"
           >
             <FontAwesomeIcon icon={faWhatsapp} className="text-xl" />
@@ -61,18 +67,12 @@ export const Footer = () => {
               </Link>
             </p>
             <p className="mb-4">
-              <Link
-                href="/about"
-                className="text-neutral-200"
-              >
+              <Link href="/about" className="text-neutral-200">
                 Ministries
               </Link>
             </p>
             <p className="mb-4">
-              <Link
-                href="/portfolio"
-                className="text-neutral-200"
-              >
+              <Link href="/portfolio" className="text-neutral-200">
                 Sermons
               </Link>
             </p>
@@ -135,6 +135,8 @@ export const Footer = () => {
         <Link
           className="font-semibold text-neutral-600 dark:text-neutral-400"
           href="https://latif83.netlify.app"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Abdul-Latif
         </Link>
