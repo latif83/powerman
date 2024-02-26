@@ -89,20 +89,23 @@ export const Header = () => {
           alt="Logo"
           className="w-100"
         />
-        <nav className="sm:flex gap-4 font-semibold hidden">
-          <Link className="text-red-500 border-b border-red-500" href="/">
+        <nav className="sm:flex gap-6 font-semibold hidden">
+          <Link className="text-red-600 text-xs border-b border-red-500" href="/">
             HOME
           </Link>
-          <Link className="hover:text-red-500" href="/">
-            MINISTRIES
+          <Link className="hover:text-red-500 text-xs" href="/">
+            ABOUT ME
           </Link>
-          <Link className="hover:text-red-500" href="#sermons">
+          <Link className="hover:text-red-500 text-xs" href="/">
+            MENTORSHIP PROGRAMS
+          </Link>
+          <Link className="hover:text-red-500 text-xs" href="#sermons">
             SERMONS
           </Link>
-          <Link className="hover:text-red-500" href="#events">
+          <Link className="hover:text-red-500 text-xs" href="#events">
             EVENTS
           </Link>
-          <Link className="hover:text-red-500" href="#getInTouch">
+          <Link className="hover:text-red-500 text-xs" href="#getInTouch">
             CONTACT
           </Link>
         </nav>
