@@ -15,11 +15,11 @@ export const MSG2 = () => {
         </h1>
         <hr className="w-16 h-1 my-2 bg-red-500 border-0 rounded" />
         <p className="font-semibold mt-5 text-4xl">
-          CONNECT, GROW AND SERVE WITH US
+          CONNECT, GROW AND SERVE WITH ME
         </p>
 
         <p className="mt-8">
-          Join us to connect, grow, and serve. Discover a welcoming community
+          Join my community to connect, grow, and serve. Discover a welcoming community
           where faith flourishes and friendships thrive. Together, we explore
           God's love and purpose, making a tangible impact in our world.
         </p>
