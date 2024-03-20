@@ -90,13 +90,16 @@ export const Header = () => {
           className="w-100"
         />
         <nav className="sm:flex gap-6 font-semibold hidden">
-          <Link className="text-red-600 text-xs border-b border-red-500" href="/">
+          <Link
+            className="text-red-600 text-xs border-b border-red-500"
+            href="/"
+          >
             HOME
           </Link>
-          <Link className="hover:text-red-500 text-xs" href="/">
+          <Link className="hover:text-red-500 text-xs" href="#about">
             ABOUT ME
           </Link>
-          <Link className="hover:text-red-500 text-xs" href="/">
+          <Link className="hover:text-red-500 text-xs" href="#mentor">
             MENTORSHIP PROGRAMS
           </Link>
           <Link className="hover:text-red-500 text-xs" href="#sermons">
@@ -141,11 +144,18 @@ export const Header = () => {
                     HOME
                   </Link>
                   <Link
-                    className="hover:text-red-500 mt-5"
-                    href="/"
                     onClick={() => setShowNav(false)}
+                    className="hover:text-red-500 mt-5"
+                    href="#about"
                   >
-                    MINISTRIES
+                    ABOUT ME
+                  </Link>
+                  <Link
+                    onClick={() => setShowNav(false)}
+                    className="hover:text-red-500 mt-5"
+                    href="#mentor"
+                  >
+                    MENTORSHIP PROGRAMS
                   </Link>
                   <Link
                     className="hover:text-red-500 mt-5"

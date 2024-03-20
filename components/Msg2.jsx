@@ -4,7 +4,7 @@ import styles from "./Msg.module.css";
 export const MSG2 = () => {
   return (
     <>
-      <div className={styles.bg3}>
+      <div id="about" className={styles.bg3}>
         <motion.div
           initial={{ opacity: 0.4, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -37,7 +37,7 @@ export const MSG2 = () => {
         </motion.div>
       </div>
 
-      <div className="py-10 px-5">
+      <div id="mentor" className="py-10 px-5">
         <h1 className="font-bold text-xl">MENTORSHIP PROGRAMMES</h1>
         <div className="grid sm:grid-cols-3 gap-2 mt-3">
           <div className="shadow bg-gray-800 text-white rounded p-3">
