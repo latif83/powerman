@@ -26,40 +26,47 @@ export const AddEvent = ({ setAddEvent, setGE }) => {
     // showToast("error","hello")
     const sendD = async () => {
       setLoading(true);
-      let data = {
-        title: formData.get("title"),
-        des: formData.get("des"),
-        sDate: formData.get("sDate"),
-        eDate: formData.get("eDate"),
-      };
+      try {
 
-      const image = formData.get("image")
+        let data = {
+          title: formData.get("title"),
+          des: formData.get("des"),
+          sDate: formData.get("sDate"),
+          eDate: formData.get("eDate"),
+        };
 
-      // Process image
-      if (image.size > 0) {
-        const imgRef = ref(imageDb, `churchImage/Shalom/${v4()}`);
-        const uploadImage = await uploadBytes(imgRef, image);
-        const getImageUrl = await getDownloadURL(uploadImage.ref);
-    
-        data.imageUrl = getImageUrl;
-      } 
-      // else {
-      //   data.imageUrl = "/vote-icon.png";
-      // }
+        const image = formData.get("image")
 
-      const response = await addEvent(data);
-      if (response.status) {
-        showToast("success", response.msg);
-        setAddEvent(false);
-        setLoading(false);
-        setGE(true);
-        return;
-      } else {
-        showToast("error", response.msg);
-        setLoading(false);
-        return;
-      }
+        // Process image
+        if (image.size > 0) {
+          const imgRef = ref(imageDb, `church/powerman/events/${v4()}`);
+          const uploadImage = await uploadBytes(imgRef, image);
+          const getImageUrl = await getDownloadURL(uploadImage.ref);
+
+          data.imageUrl = getImageUrl;
+        }
+        // else {
+        //   data.imageUrl = "/vote-icon.png";
+        // }
+
+        const response = await addEvent(data);
+        if (response.status) {
+          showToast("success", response.msg);
+          setAddEvent(false);
+          setLoading(false);
+          setGE(true);
+          return;
+        } else {
+          showToast("error", response.msg);
+          setLoading(false);
+          return;
+        }
+      } catch (err) {
+        console.log(err)
+      } finally { }
+      setLoading(false);
     };
+
     if (sendData) {
       sendD();
       setSendData(false);

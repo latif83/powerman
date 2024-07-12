@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./delete.module.css";
-import { deleteRecordBySection } from "@/actions/actions";
+import { deleteEvent } from "@/actions/actions";
 import { useToaster } from "@/providers/ToasterContext";
 
 export const Delete = ({ section, sectionId, setOpenDel, setG }) => {
@@ -10,7 +10,7 @@ export const Delete = ({ section, sectionId, setOpenDel, setG }) => {
 
   useEffect(() => {
     const delSection = async () => {
-      const response = await deleteRecordBySection(section, sectionId);
+      const response = await deleteEvent(sectionId);
       if (!response.status) {
         showToast("error", response.msg);
       } else {

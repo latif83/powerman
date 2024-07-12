@@ -143,7 +143,7 @@ export default function Events() {
                     src={event.imageUrl}
                     width={200}
                     height={200}
-                    className="w-20 h-20 rounded object-cover"
+                    className="w-20 h-auto rounded object-cover"
                   />
                 </td>
                 <th
