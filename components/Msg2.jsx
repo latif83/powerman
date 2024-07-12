@@ -4,14 +4,17 @@ import styles from "./Msg.module.css";
 const mentorshipPrograms = [
   "Rise of the Eagles",
   "The Wealth Project",
-  "Word of the Spirit",
+  "Bible School",
+];
+
+const yearlyPrograms = [
   "The Power of Jesus",
   "Hour of Prophesies",
   "Healing School Conference",
   "Prophetic Horn",
   "Back to Church Crusades",
   "Schools Outreaches",
-  "Pastors Seminar",
+  "Healing School Conference",
 ];
 
 const motionProps = {
@@ -47,16 +50,25 @@ export const MSG2 = () => {
             together, living out the love of Christ and making a difference in
             the lives of those around us.
           </p>
-          <button className={buttonClassNames}>
-            LEARN MORE
-          </button>
+          <button className={buttonClassNames}>LEARN MORE</button>
         </motion.div>
       </div>
 
       <div id="mentor" className="py-10 px-5">
         <h1 className="font-bold text-xl">MENTORSHIP PROGRAMMES</h1>
-        <div className="grid sm:grid-cols-3 gap-2 mt-3">
+        <div className="grid sm:grid-cols-3 grid-cols-1 gap-2 mt-3">
           {mentorshipPrograms.map((program, index) => (
+            <div key={index} className="shadow bg-gray-800 text-white rounded p-3">
+              <p className="text-lg">{program}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div id="yearly" className="py-10 px-5">
+        <h1 className="font-bold text-xl">YEARLY PROGRAMMES</h1>
+        <div className="grid sm:grid-cols-3 grid-cols-1 gap-2 mt-3">
+          {yearlyPrograms.map((program, index) => (
             <div key={index} className="shadow bg-gray-800 text-white rounded p-3">
               <p className="text-lg">{program}</p>
             </div>
