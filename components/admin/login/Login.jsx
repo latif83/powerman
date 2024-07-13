@@ -25,7 +25,7 @@ export const Login = () => {
         username: formData.get("username"),
         password: formData.get("password"),
       };
-      if (data.username == "shalom" && data.password == "shalom@321") {
+      if (data.username == "powerman" && data.password == "powerman@321") {
         login();
         showToast("success", "Login successful, Redirecting...");
         setLoading(false);
@@ -45,8 +45,8 @@ export const Login = () => {
     <section style={{ height: "100svh" }} className="bg-gray-50">
       <div className="flex flex-col items-center justify-center sm:px-6 px-3 h-full sm:h-auto py-8 mx-auto md:h-screen lg:py-0">
         <Image
-          className="w-12 h-12 mr-2 mb-3"
-          src="/logo.jpg"
+          className="w-auto h-12 mr-2 mb-3"
+          src="/logo.png"
           alt="logo"
           width={200}
           height={200}
@@ -85,7 +85,7 @@ export const Login = () => {
                   name="password"
                   id="password"
                   placeholder="••••••••"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5"
                   required=""
                 />
               </div>
@@ -116,7 +116,7 @@ export const Login = () => {
 
               <button
                 type="submit"
-                className="w-full text-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600"
+                className="w-full text-white hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-red-600"
               >
                 {loading ? (
                   <FontAwesomeIcon icon={faSpinner} spin className="text-lg" />

@@ -8,8 +8,8 @@ export const LoginProvider = ({ children }) => {
   const [loginTime, setLoginTime] = useState(null);
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("shalom_login") === "true";
-    const storedLoginTime = localStorage.getItem("shalom_login_time");
+    const isLoggedIn = localStorage.getItem("powerman_login") === "true";
+    const storedLoginTime = localStorage.getItem("powerman_login_time");
     
     if (isLoggedIn && storedLoginTime) {
       const thirtyMinutesInMs = 30 * 60 * 1000; // 30 minutes in milliseconds
@@ -28,15 +28,15 @@ export const LoginProvider = ({ children }) => {
   const login = () => {
     setLoggedIn(true);
     setLoginTime(Date.now());
-    localStorage.setItem("shalom_login", "true");
-    localStorage.setItem("shalom_login_time", Date.now().toString());
+    localStorage.setItem("powerman_login", "true");
+    localStorage.setItem("powerman_login_time", Date.now().toString());
   };
 
   const logout = () => {
     setLoggedIn(false);
     setLoginTime(null);
-    localStorage.removeItem("shalom_login");
-    localStorage.removeItem("shalom_login_time");
+    localStorage.removeItem("powerman_login");
+    localStorage.removeItem("powerman_login_time");
   };
 
   return (

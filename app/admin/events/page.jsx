@@ -8,8 +8,19 @@ import { useEffect, useState } from "react";
 import { getEvents } from "@/actions/actions";
 import { Delete } from "@/components/delete/Delete";
 import { EditEvent } from "./editEvent";
+import { useRouter } from "next/navigation";
+import { useLogin } from "@/providers/LoginContext";
 
 export default function Events() {
+
+  const { loggedIn } = useLogin();
+
+  const router = useRouter()
+
+  useEffect(()=>{
+      !loggedIn && router.replace('admin/')
+  },[loggedIn])
+
   const [addEvent, setAddEvent] = useState(false);
   const [editEvent, setEditEvent] = useState(false);
   const [gE,setGE] = useState(true)
