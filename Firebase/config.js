@@ -17,12 +17,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-let app;
-if (!getApps().length) {
-  app = initializeApp(firebaseConfig);
-} else {
-  app = getApps()[0];
-}
-
+const app = initializeApp(firebaseConfig);
 export const imageDb = getStorage(app)
 export const db = getFirestore(app)
