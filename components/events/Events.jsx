@@ -1,6 +1,6 @@
 "use client";
 
-import { getCEvents } from "@/actions/actions";
+import { getEvents } from "@/actions/actions";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -9,7 +9,7 @@ export const Events = () => {
 
   useEffect(() => {
     const gEvents = async () => {
-      const req = await getCEvents();
+      const req = await getEvents();
       if (req.status) {
         setEvents(req.events);
         console.log(req.events);
