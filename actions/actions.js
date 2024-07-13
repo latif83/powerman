@@ -1,4 +1,4 @@
-"use client"
+"use server";
 // import prisma from "@/config/prisma";
 import { db } from "@/Firebase/config";
 import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
@@ -9,7 +9,7 @@ import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase
 //   const eventsCount = await prisma.shalom_events.count();
 
 //   // console.log({ pastorsCount, membersCount, eventsCount });
- 
+
 //   return {
 //     pastorsCount,
 //     membersCount,
