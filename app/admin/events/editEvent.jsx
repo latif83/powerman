@@ -19,6 +19,7 @@ export const EditEvent = ({ setEditEvent, setGE, eventDetails }) => {
   const [des, setDes] = useState("");
   const [sDate, setSDate] = useState("");
   const [eDate, setEDate] = useState("");
+  const [eventType, setEventType] = useState(eventDetails.event_type)
 
   const { showToast } = useToaster();
 
@@ -57,6 +58,7 @@ export const EditEvent = ({ setEditEvent, setGE, eventDetails }) => {
         des: formData.get("des"),
         sDate: formData.get("sDate"),
         eDate: formData.get("eDate"),
+        event_type: formData.get("event_type")
       };
 
       const image = formData.get("image");
@@ -103,7 +105,7 @@ export const EditEvent = ({ setEditEvent, setGE, eventDetails }) => {
 
   return (
     <div className={`${styles.container} sm:pt-10`}>
-      <div className="w-full max-w-xl mx-auto h-full sm:h-auto bg-white sm:rounded shadow p-10">
+      <div className="w-full max-w-xl mx-auto h-full sm:h-auto bg-white sm:rounded shadow sm:p-10 p-3">
         <div className="flex justify-between mb-3">
           <h1 className="font-semibold">Add Event</h1>
           <FontAwesomeIcon
@@ -188,6 +190,20 @@ export const EditEvent = ({ setEditEvent, setGE, eventDetails }) => {
               >
                 Ending Date & Time
               </label>
+            </div>
+
+            <div className="relative z-0 w-full mb-5 group">
+              <label
+                htmlFor="event_type"
+                className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >
+                Event Type
+              </label>
+              <select name="event_type" id="event_type" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border" required value={eventType}
+                onChange={(e) => setEventType(e.target.value)}>
+                <option value={'yearly'}>Yearly</option>
+                <option value={'mentorship'}>Mentorship</option>
+              </select>
             </div>
 
             <div className="relative z-0 w-full mb-5 group">

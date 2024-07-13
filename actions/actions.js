@@ -1,7 +1,14 @@
-"use client"
+"use client";
 // import prisma from "@/config/prisma";
 import { db } from "@/Firebase/config";
-import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  updateDoc,
+} from "firebase/firestore";
 
 // export const getCounts = async () => {
 //   const pastorsCount = await prisma.shalom_pastors.count();
@@ -9,7 +16,7 @@ import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase
 //   const eventsCount = await prisma.shalom_events.count();
 
 //   // console.log({ pastorsCount, membersCount, eventsCount });
- 
+
 //   return {
 //     pastorsCount,
 //     membersCount,
@@ -18,39 +25,37 @@ import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase
 // };
 
 export const addEvent = async (formData) => {
-  try{
-    let { title, des, sDate, eDate, imageUrl } = formData;
+  try {
+    let { title, des, sDate, eDate, imageUrl, event_type } = formData;
 
-  const createEvent = await addDoc(
-    collection(db, `church/powerman/events`), {
+    const createEvent = await addDoc(collection(db, `church/powerman/events`), {
       title,
       des,
       sDate: new Date(sDate).toISOString(),
       eDate: new Date(eDate).toISOString(),
       imageUrl,
+      event_type,
+    });
+
+    if (createEvent?.id) {
+      return {
+        status: true,
+        msg: `New Event added successfully`,
+      };
+    } else {
+      return {
+        status: false,
+        msg: "Error adding data",
+      };
     }
-  );
-
-
-  if (createEvent?.id) {
-    return {
-      status: true,
-      msg: `New Event added successfully`,
-    };
-  } else {
-    return {
-      status: false,
-      msg: "Error adding data",
-    };
-  }
-  } catch(err){
-    console.log(err)
+  } catch (err) {
+    console.log(err);
   }
 };
 
 export const editEvent = async (formData) => {
   try {
-    let { id, title, des, sDate, eDate, imageUrl } = formData;
+    let { id, title, des, sDate, eDate, imageUrl,event_type } = formData;
 
     // Reference to the specific event document
     const eventRef = doc(db, `church/powerman/events/${id}`);
@@ -62,6 +67,7 @@ export const editEvent = async (formData) => {
       sDate: new Date(sDate).toISOString(),
       eDate: new Date(eDate).toISOString(),
       imageUrl,
+      event_type
     });
 
     return {
@@ -79,10 +85,12 @@ export const editEvent = async (formData) => {
 
 export const getEvents = async () => {
   try {
-    const eventsSnapshot = await getDocs(collection(db, 'church/powerman/events'));
-    const events = eventsSnapshot.docs.map(doc => ({
+    const eventsSnapshot = await getDocs(
+      collection(db, "church/powerman/events")
+    );
+    const events = eventsSnapshot.docs.map((doc) => ({
       id: doc.id,
-      ...doc.data()
+      ...doc.data(),
     }));
 
     return {

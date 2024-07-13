@@ -15,7 +15,7 @@ export const Header = ({ cPage }) => {
           src="/logo.png"
           width={200}
           height={200}
-          className="sm:w-[200px] sm:h-auto w-16 h-auto rounded-full"
+          className="sm:w-[200px] w-[200px] h-auto rounded-full"
           alt=""
         />
         <nav className="sm:flex hidden gap-4">
@@ -36,7 +36,7 @@ export const Header = ({ cPage }) => {
             Events
           </Link>
         </nav>
-        <button className="hidden" onClick={() => setShowMNav(!showMNav)}>
+        <button className="sm:hidden" onClick={() => setShowMNav(!showMNav)}>
           {showMNav ? (
             <FontAwesomeIcon icon={faXmark} color="red" className="text-lg" />
           ) : (

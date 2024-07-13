@@ -1,6 +1,8 @@
 "use client";
 
 import { getEvents } from "@/actions/actions";
+import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -23,12 +25,20 @@ const yearlyPrograms = [
 export const Events = () => {
   const [events, setEvents] = useState([]);
 
+  const [mentorshipEvents, setMentorshipEvents] = useState()
+  const [yearlyEvents, setYearlyEvents] = useState()
+
   useEffect(() => {
     const gEvents = async () => {
       const req = await getEvents();
       if (req.status) {
         setEvents(req.events);
-        console.log(req.events);
+        setMentorshipEvents(req.events.filter((event) => {
+          return event.event_type == "mentorship"
+        }))
+        setYearlyEvents(req.events.filter((event) => {
+          return event.event_type == "yearly"
+        }))
       }
     };
 
@@ -37,7 +47,7 @@ export const Events = () => {
 
   return (
     <div
-    id="events"
+      id="events"
       style={{ backgroundColor: "#002b67" }}
       className="bg-gradient-to-r from-gray-800 to-red-800 py-12 sm:px-12 px-3 text-white"
     >
@@ -58,6 +68,41 @@ export const Events = () => {
             </div>
           ))}
         </div>
+        <div className="mt-10">
+          <h3 className="flex items-center mb-5 gap-1.5"> <FontAwesomeIcon icon={faDotCircle} bounce width={20} height={20} /> Coming Up</h3>
+          {mentorshipEvents?.length > 0 ? (
+            <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
+              {mentorshipEvents?.map((event) => (
+                <div className="rounded bg-white rounded-md flex sm:flex-row flex-col">
+                  <Image
+                    src={event.imageUrl}
+                    alt="Image"
+                    width={400}
+                    height={400}
+                    className="bg-red-200 sm:w-[200px] w-full h-[220px] rounded-l-md border shadow-inset object-cover"
+                  />
+                  <div className="p-2 text-black">
+                    <h1 className="text-lg font-bold">{event.title}</h1>
+                    <p className="mt-1">{event.des}</p>
+                    <div className="mt-2">
+                      <h1 className="font-bold">From:</h1>
+                      <p>{new Date(event.sDate).toDateString()} @ {new Date(event.sDate).toLocaleTimeString()}</p>
+                    </div>
+
+                    <div className="mt-2">
+                      <h1 className="font-bold">To:</h1>
+                      <p>{new Date(event.eDate).toDateString()} @ {new Date(event.eDate).toLocaleTimeString()}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="italic mt-5">
+              No events at the moment, please check again later.
+            </p>
+          )}
+        </div>
       </div>
 
       <div id="yearly" className="py-10">
@@ -69,42 +114,44 @@ export const Events = () => {
             </div>
           ))}
         </div>
+        <div className="mt-10">
+          <h3 className="flex items-center mb-5 gap-1.5"> <FontAwesomeIcon icon={faDotCircle} bounce width={20} height={20} /> Coming Up</h3>
+          {yearlyEvents?.length > 0 ? (
+            <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
+              {yearlyEvents?.map((event) => (
+                <div className="rounded bg-white rounded-md flex sm:flex-row flex-col">
+                  <Image
+                    src={event.imageUrl}
+                    alt="Image"
+                    width={400}
+                    height={400}
+                    className="bg-red-200 sm:w-[200px] w-full h-[220px] rounded-l-md border shadow-inset object-cover"
+                  />
+                  <div className="p-2 text-black">
+                    <h1 className="text-lg font-bold">{event.title}</h1>
+                    <p className="mt-1">{event.des}</p>
+                    <div className="mt-2">
+                      <h1 className="font-bold">From:</h1>
+                      <p>{new Date(event.sDate).toDateString()} @ {new Date(event.sDate).toLocaleTimeString()}</p>
+                    </div>
+
+                    <div className="mt-2">
+                      <h1 className="font-bold">To:</h1>
+                      <p>{new Date(event.eDate).toDateString()} @ {new Date(event.eDate).toLocaleTimeString()}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="italic mt-5">
+              No events at the moment, please check again later.
+            </p>
+          )}
+        </div>
       </div>
 
-      {/* {events.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 mt-10">
-          {events.map((event) => (
-            <div className="border rounded flex shadow-lg bg-white">
-              <div>
-              <Image
-                src={event.imageUrl}
-                alt="Image"
-                width={400}
-                height={400}
-                className="h-full bg-red-200 w-[300px] object-cover"
-              />
-                </div>
-              <div className="p-3 text-black">
-                <h1 className="text-lg font-bold">{event.title}</h1>
-                <p className="mt-3">{event.des}</p>
-                <div className="mt-3">
-                  <h1 className="font-bold">From:</h1>
-                  <p>{new Date(event.sDate).toDateString()} @ {new Date(event.sDate).toLocaleTimeString()}</p>
-                </div>
 
-                <div className="mt-3">
-                  <h1 className="font-bold">To:</h1>
-                  <p>{new Date(event.eDate).toDateString()} @ {new Date(event.eDate).toLocaleTimeString()}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p className="italic mt-5">
-          No events at the moment, please check again later.
-        </p>
-      )} */}
     </div>
   );
 };
