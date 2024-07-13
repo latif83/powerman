@@ -1,21 +1,21 @@
-"use server";
-import prisma from "@/config/prisma";
+// "use server";
+// import prisma from "@/config/prisma";
 import { db } from "@/Firebase/config";
 import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
 
-export const getCounts = async () => {
-  const pastorsCount = await prisma.shalom_pastors.count();
-  const membersCount = await prisma.shalom_members.count();
-  const eventsCount = await prisma.shalom_events.count();
+// export const getCounts = async () => {
+//   const pastorsCount = await prisma.shalom_pastors.count();
+//   const membersCount = await prisma.shalom_members.count();
+//   const eventsCount = await prisma.shalom_events.count();
 
-  // console.log({ pastorsCount, membersCount, eventsCount });
-
-  return {
-    pastorsCount,
-    membersCount,
-    eventsCount,
-  };
-};
+//   // console.log({ pastorsCount, membersCount, eventsCount });
+ 
+//   return {
+//     pastorsCount,
+//     membersCount,
+//     eventsCount,
+//   };
+// };
 
 export const addEvent = async (formData) => {
   try{
