@@ -6,8 +6,10 @@ const LoginContext = createContext();
 export const LoginProvider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [loginTime, setLoginTime] = useState(null);
+  const [isChecking,setIsChecking] = useState(true)
 
   useEffect(() => {
+    setIsChecking(true)
     const isLoggedIn = localStorage.getItem("powerman_login") === "true";
     const storedLoginTime = localStorage.getItem("powerman_login_time");
     
@@ -17,6 +19,7 @@ export const LoginProvider = ({ children }) => {
       
       if (elapsedTime < thirtyMinutesInMs) {
         setLoggedIn(true);
+        setIsChecking(false)
         setLoginTime(parseInt(storedLoginTime, 10));
       } else {
         // Logout user if login time has exceeded 30 minutes
@@ -27,6 +30,7 @@ export const LoginProvider = ({ children }) => {
 
   const login = () => {
     setLoggedIn(true);
+    setIsChecking(false)
     setLoginTime(Date.now());
     localStorage.setItem("powerman_login", "true");
     localStorage.setItem("powerman_login_time", Date.now().toString());
@@ -34,13 +38,14 @@ export const LoginProvider = ({ children }) => {
 
   const logout = () => {
     setLoggedIn(false);
+    setIsChecking(false)
     setLoginTime(null);
     localStorage.removeItem("powerman_login");
     localStorage.removeItem("powerman_login_time");
   };
 
   return (
-    <LoginContext.Provider value={{ loggedIn, login, logout }}>
+    <LoginContext.Provider value={{ loggedIn, login, logout,isChecking }}>
       {children}
     </LoginContext.Provider>
   );

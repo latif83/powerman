@@ -13,12 +13,12 @@ import { useLogin } from "@/providers/LoginContext";
 
 export default function Events() {
 
-  const { loggedIn } = useLogin();
+  const { loggedIn,isChecking } = useLogin();
 
   const router = useRouter()
 
   useEffect(()=>{
-      !loggedIn && router.replace('admin/')
+      !loggedIn && !isChecking && router.replace('/admin')
   },[loggedIn])
 
   const [addEvent, setAddEvent] = useState(false);
