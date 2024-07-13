@@ -1,4 +1,4 @@
-// "use server";
+"use client"
 // import prisma from "@/config/prisma";
 import { db } from "@/Firebase/config";
 import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
