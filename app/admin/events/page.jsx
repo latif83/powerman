@@ -13,21 +13,23 @@ import { useLogin } from "@/providers/LoginContext";
 
 export default function Events() {
 
-  const { loggedIn,isChecking } = useLogin();
+  const { loggedIn, isChecking } = useLogin();
 
   const router = useRouter()
 
-  useEffect(()=>{
-      !loggedIn && !isChecking && router.replace('/admin')
-  },[loggedIn])
+  useEffect(() => {
+    if (!loggedIn && !isChecking) {
+      router.replace('/admin')
+    }
+  }, [loggedIn,isChecking])
 
   const [addEvent, setAddEvent] = useState(false);
   const [editEvent, setEditEvent] = useState(false);
-  const [gE,setGE] = useState(true)
-  const [loading,setLoading] = useState(true)
-  const [events,setEvents] = useState([])
+  const [gE, setGE] = useState(true)
+  const [loading, setLoading] = useState(true)
+  const [events, setEvents] = useState([])
 
-  const [eventDetails,setEventDetails] = useState({})
+  const [eventDetails, setEventDetails] = useState({})
 
   const [openDel, setOpenDel] = useState(false);
   const section = "event";
@@ -148,7 +150,7 @@ export default function Events() {
               </tr>
             </thead>
             <tbody>
-              {events.length > 0 ? events.map((event)=>(<tr className="bg-white border-b hover:bg-gray-50">
+              {events.length > 0 ? events.map((event) => (<tr className="bg-white border-b hover:bg-gray-50">
                 <td className="px-6 py-4">
                   <Image
                     src={event.imageUrl}
@@ -169,17 +171,17 @@ export default function Events() {
                 <td className="px-6 py-4"><p>{new Date(event.eDate).toDateString()}</p> <p>@ {new Date(event.eDate).toLocaleTimeString()}</p></td>
                 <td className="px-6 py-4">
                   <button
-                  onClick={()=>{setEditEvent(true); setEventDetails(event)}}
+                    onClick={() => { setEditEvent(true); setEventDetails(event) }}
                     type="button"
                     className="font-medium text-blue-600 hover:underline"
                   >
                     Edit
                   </button>
                   <button
-                  onClick={()=>{
-                    setSectionId(event.id)
-                    setOpenDel(true)
-                  }}
+                    onClick={() => {
+                      setSectionId(event.id)
+                      setOpenDel(true)
+                    }}
                     type="button"
                     className="font-medium text-red-600 hover:underline ms-3"
                   >
@@ -189,9 +191,9 @@ export default function Events() {
               </tr>)) : <tr>
                 <td className="px-6 py-4">
                   No Events Found
-                  </td>
-              </tr> }
-              
+                </td>
+              </tr>}
+
 
               {loading && (
                 <tr>

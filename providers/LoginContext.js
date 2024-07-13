@@ -25,6 +25,9 @@ export const LoginProvider = ({ children }) => {
         // Logout user if login time has exceeded 30 minutes
         logout();
       }
+    } else{
+      setLoggedIn(false)
+      setIsChecking(false)
     }
   }, []);
 
