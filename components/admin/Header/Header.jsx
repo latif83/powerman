@@ -19,14 +19,14 @@ export const Header = ({ cPage }) => {
           alt=""
         />
         <nav className="sm:flex hidden gap-4">
-          <Link
+          {/* <Link
             href="/admin"
             className={`${
               cPage == "home" && "text-gray-200 font-bold"
             } hover:text-red-700`}
           >
             Dashboard
-          </Link>
+          </Link> */}
           <Link
             href="/admin/events"
             className={`${
@@ -46,14 +46,14 @@ export const Header = ({ cPage }) => {
       </header>
       {showMNav && (
         <div className="bg-blue-400 sm:px-12 px-3 py-2 flex flex-col gap-8 ">
-          <Link
+          {/* <Link
             href="/admin"
             className={`${
               cPage == "home" && "text-gray-200 font-bold"
             } hover:text-red-700`}
           >
             Dashboard
-          </Link>
+          </Link> */}
           <Link
             href="/admin/events"
             className={`${
@@ -62,7 +62,7 @@ export const Header = ({ cPage }) => {
           >
             Events
           </Link>
-          <Link
+          {/* <Link
             href="/admin/pastors"
             className={`${
               cPage == "pastors" && "text-gray-200 font-bold"
@@ -77,7 +77,7 @@ export const Header = ({ cPage }) => {
             } hover:text-red-700`}
           >
             Members
-          </Link>
+          </Link> */}
         </div>
       )}
     </>
